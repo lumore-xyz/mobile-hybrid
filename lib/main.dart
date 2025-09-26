@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:lumore/screens/Home/home_screen.dart';
 import 'package:lumore/screens/launchScreen/launchScreen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    // Status bar color
+    statusBarColor: Colors.yellowAccent,
+
+    // Status bar brightness (for Android: dark icons)
+    statusBarIconBrightness: Brightness.dark,
+
+    // Status bar brightness (for iOS: dark icons)
+    statusBarBrightness: Brightness.dark,
+  ));
   runApp(const MyApp());
 }
 
@@ -16,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AnimatedSplashScreen(),
+      home: const HomeScreen(),
     );
   }
 }

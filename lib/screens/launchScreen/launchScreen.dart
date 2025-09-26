@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lumore/screens/Home/home_screen.dart';
+import 'package:lumore/screens/Login/login_screen.dart';
 import 'package:lumore/screens/launchScreen/circular_orbit_animation.dart';
 import 'package:lumore/screens/launchScreen/container.dart';
 import 'package:lumore/screens/launchScreen/line_loader.dart';
@@ -18,7 +18,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const HomeScreen()),
+          MaterialPageRoute(builder: (_) => const LoginScreen()),
         );
       }
     });
@@ -54,8 +54,8 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
             ),
             // For the first text
 
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 8.0),
               child: Text(
                 "Lumore",
                 style: TextStyle(
@@ -66,8 +66,8 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
             ),
 
             // For the second text
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 8.0),
               child: Text(
                 "Connecting you with like-minded people",
                 style: TextStyle(
@@ -75,11 +75,11 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
                 ),
               ),
             ),
-            LineLoader(
+            const LineLoader(
               width: 150,
               lineColor: Colors.yellow, // Set color to yellow
-              trackColor: const Color(0xFFEEEEEE),
-              duration: const Duration(milliseconds: 1000), // Increase speed (1.5 seconds)
+              trackColor: Color(0xFFEEEEEE),
+              duration: Duration(milliseconds: 1000), // Increase speed (1.5 seconds)
             ),
           ],
         ),
