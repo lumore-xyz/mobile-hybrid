@@ -24,7 +24,7 @@ class CustomIconButton extends StatelessWidget {
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
 
-          side: const BorderSide(color: Colors.black, width: 1.5),
+          side: const BorderSide(color: Colors.black, width: 1),
 
           padding: EdgeInsets.symmetric(
               vertical: context.screenHeight * 0.016

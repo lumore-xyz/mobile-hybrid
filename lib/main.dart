@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lumore/screens/Home/home_screen.dart';
-import 'package:lumore/screens/launchScreen/launchScreen.dart';
+import 'package:lumore/components/preferences/interestedin.dart';
+import 'package:lumore/screens/pages/preferencesscreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const InterestedInPref(),
     );
   }
 }

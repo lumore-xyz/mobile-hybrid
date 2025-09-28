@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lumore/components/buttons/borderbutton.dart';
-import 'package:lumore/components/headers/home_appbar.dart';
 import 'package:lumore/components/headers/profile_header.dart';
 import 'package:lumore/components/profilecard.dart';
 import 'package:lumore/constants/constant.dart';
@@ -66,7 +65,7 @@ class ProfileScreen extends StatelessWidget{
 
 
             ),
-            EditProfileButton(
+            CustomBorderButton(
               text: "Edit Profile",
               icon: Icons.edit_outlined,
               onPressed: () {},

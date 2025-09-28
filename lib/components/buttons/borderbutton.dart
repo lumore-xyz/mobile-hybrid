@@ -1,15 +1,33 @@
 import 'package:flutter/material.dart';
 
-class EditProfileButton  extends StatelessWidget {
+class CustomBorderButton  extends StatelessWidget {
 
   final String text;
-  final IconData icon;
+  final Color textColor;
+  final Color backgroundColor;
+  final Color borderColor;
+  final IconData? icon;
   final VoidCallback onPressed;
+  final double borderWidth;
+  final double? iconSize;
+  // final double horizohtalPadding;
+  // final double verticalPadding;
+  final double borderRadius;
 
-  const EditProfileButton ({
+
+  const CustomBorderButton ({
     required this.text,
-    required this.icon,
     required this.onPressed,
+    this.textColor = Colors.black,
+    this.backgroundColor = Colors.white,
+    this.borderColor = Colors.black,
+    this.icon,
+    this.borderWidth = 0.5,
+    this.borderRadius = 10.0,
+    this.iconSize = 20.0,
+    // this.horizohtalPadding = 20.0,
+    // this.verticalPadding = 12.0,
+
     super.key
   });
 
@@ -21,22 +39,26 @@ class EditProfileButton  extends StatelessWidget {
         child: OutlinedButton(
           onPressed: onPressed,
           style: OutlinedButton.styleFrom(
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              side: const BorderSide(color: Colors.black, width: 0.5),
+              backgroundColor: backgroundColor,
+              foregroundColor: textColor,
+              side: BorderSide(color: borderColor, width: borderWidth),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(borderRadius),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 20.0)
+          ).copyWith(
+            iconColor: MaterialStateProperty.all(textColor),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
-              Text(text),
+              Text(text, style: TextStyle(color: textColor),),
               const SizedBox(width: 8.0),
+              if (icon != null) ...[
+                const SizedBox(width: 8.0),
+                Icon(icon, size: iconSize, color: textColor,),
+              ]
               // Icon comes second
-              Icon(icon, size: 20),
             ],
           ),
         ),

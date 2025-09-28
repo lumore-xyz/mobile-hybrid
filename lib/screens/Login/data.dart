@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lumore/components/button.dart';
-import 'package:lumore/components/iconbutton.dart';
+import 'package:lumore/components/buttons/iconbutton.dart';
 import 'package:lumore/components/input.dart';
 import 'package:lumore/components/text.dart';
 
