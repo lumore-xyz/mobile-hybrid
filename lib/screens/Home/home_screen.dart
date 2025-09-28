@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lumore/components/bottomnav.dart';
-import 'package:lumore/components/home_appbar.dart';
-import 'package:lumore/components/homescreen.dart';
+import 'package:lumore/screens/pages/chatscreen.dart';
+import 'package:lumore/screens/pages/homescreen.dart';
+import 'package:lumore/screens/pages/profilescreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,17 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  static List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetOptions = <Widget>[
     Center(child: Home()),
-    const Center(child: Text('Search Page Content')),
-    const Center(child: Text('Favorites Page Content')),
+    Center(child: ChatScreen()),
+    Center(child: ProfileScreen()),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-
+      backgroundColor: Colors.white,
       body: _widgetOptions.elementAt(_selectedIndex),
 
       bottomNavigationBar: CustomBottomNav(

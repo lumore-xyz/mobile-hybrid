@@ -7,20 +7,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: AppBar(
-        // These two lines make the background invisible
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // color : Colors.transparent,
+        children: [
+          // Leading icon (left side)
+          SvgPicture.asset(
+            'assets/lumore-hr.svg',
+            height: 45,
+            width: 45,
+          ),
 
-        // Leading icon (left side)
-        leading: SvgPicture.asset(
-          'assets/lumore-hr.svg',
-          height: 50,
-          width: 50,
-        ),
-
-        // Actions (right side)
-        actions: [
+          // Actions (right side)
           IconButton(
             icon: Container(
               padding: const EdgeInsets.all(4),
@@ -28,7 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.settings, color: Colors.black),
+              child: const Icon(Icons.tune, color: Colors.black),
             ),
             onPressed: () {},
           ),
